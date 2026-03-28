@@ -9,6 +9,8 @@ It includes file encryption/decryption, RSA key generation, and a simulated rans
 
 ---
 
+[![Making Ransomware Demo](https://img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg)](https://wwwyoutube.com/watch?v=lYW5gbkp4VA)
+
 ## 📋 Project Structure
 
 All files are in the same folder:
