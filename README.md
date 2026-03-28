@@ -94,36 +94,3 @@ Run the decryption script:
 python Decrypt.py
 ```
 Result: All encrypted files in the folder will be restored to their original state! 🎉
-
-🔄 Full Flow Diagram
-Plaintext
-[1. Generate RSA Keys] 
-       │ 
-       ├──► (public.pem) ─────┐
-       └──► (private.pem)     │
-                              ▼
-                   [2. Setup Target Folder]
-                              │
-  ┌───────────────────────────┴───────────────────────────┐
-  ▼                                                       ▼
-[3. Start Receiver.py] ◄──────[Send Data]────── [4. Run Ransomware.py]
-(Attacker Server)                               (Victim Machine)
-  │                                                       │
-  ▼                                                       ▼
-[ReceivedFiles/ created]                           [Files Encrypted]
-(Contains original files 
- & master.key.enc)                                        │
-  │                                                       │
-  ▼                                                       │
-[5. Move private.pem & DecryptRSA.py]                     │
-[   to ReceivedFiles/ and run       ]                     │
-  │                                                       │
-  ▼                                                       │
-[master.key is decrypted] ────────────────────────────────┘
-  │
-  ▼
-[6. Move master.key & Decrypt.py]
-[   to Target Folder and run    ]
-  │
-  ▼
-[Original Files Restored!]
