@@ -57,7 +57,12 @@ def main():
                 for i in range(total_files):
                     header = recv_exact(conn, 1024).decode().strip()
                     filename, filesize = header.split('|')
+                    filename = filename.replace('\\', os.sep)
                     filesize = int(filesize)
+
+                    if filename == 'SKIP':
+                        conn.send(b'SKIP')
+                        continue
 
                     save_path = os.path.join(SAVE_DIR, filename)
                     os.makedirs(os.path.dirname(save_path), exist_ok=True)
