@@ -23,5 +23,4 @@ def decrypt_rsa(encrypted_file: str, private_key_file: str, output_file: str):
     os.remove('master.key.enc')
 
 if __name__ == '__main__':
-    decrypt_rsa(encrypted_file='master.key.enc', private_key_file='private.pem', output_file='master.key'
-    )
+    decrypt_rsa(encrypted_file='master.key.enc', private_key_file='private.pem', output_file='master.key')

